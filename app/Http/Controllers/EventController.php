@@ -27,4 +27,8 @@ class EventController extends Controller
 
         return view('events.update', $data);
     }
+
+    public function delete(Request $request) {
+        return redirect(route('events'));
+    }
 }
