@@ -6,8 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{{$title ?? 'Ticket Events'}}</title>
         @vite('resources/css/app.css')
+        {{$headers ?? null}}
     </head>
     <body class="w-full min-h-screen bg-slate-900">
         {{$slot}}
+
+        {{$scripts ?? null}}
     </body>
 </html>
