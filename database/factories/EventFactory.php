@@ -19,9 +19,9 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->text(30),
             'description' => $this->faker->text(150),
-            'due_date' => $this->faker->dateTime(),
+            'due_date' => $this->faker->dateTimeBetween('now', '+1 year'),
             'qtd_tickets' => rand(0, 999),
-            'price_ticket' => rand(0, 100),
+            'price_ticket' => $this->faker->randomFloat(2, 10, 99),
         ];
     }
 }
