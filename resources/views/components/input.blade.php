@@ -6,6 +6,7 @@
         @endif
         @if(isset($name))
             name="{{$name}}"
+            id="{{$name}}"
         @endif
         @if(isset($value))
             value="{{$value}}"

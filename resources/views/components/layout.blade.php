@@ -11,6 +11,8 @@
     <body class="w-full min-h-screen bg-slate-900">
         {{$slot}}
 
+        <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{asset('assets/js/app.js')}}"></script>
         {{$scripts ?? null}}
     </body>
 </html>

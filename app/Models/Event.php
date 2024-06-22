@@ -11,6 +11,14 @@ class Event extends Model
 {
     protected $table = 'events';
 
+    protected $fillable = [
+        'title',
+        'description',
+        'due_date',
+        'qtd_tickets',
+        'price_ticket',
+    ];
+
     use HasFactory;
 
     public function ticket_buyers() {

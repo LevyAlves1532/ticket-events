@@ -9,6 +9,7 @@
         @endif
         @if (isset($name))
             name="{{$name}}"
+            id="{{$name}}"
         @endif
     >{{$value ?? ''}}</textarea>
 </label>

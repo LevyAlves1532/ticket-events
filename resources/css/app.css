@@ -6,3 +6,11 @@
     cursor: pointer;
     filter: invert(1) brightness(100%) sepia(0%) saturate(10000%) hue-rotate(20deg);
 }
+
+label.error {
+    display: block;
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
