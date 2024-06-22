@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 
@@ -14,4 +15,11 @@ Route::prefix('events')->group(function() {
     Route::get('/update/{id}', [EventController::class, 'update'])->name('events.update');
     Route::post('/update_action', [EventController::class, 'update_action'])->name('events.update_action');
     Route::get('/delete/{id}', [EventController::class, 'delete'])->name('events.delete');
+});
+
+Route::prefix('buyers')->group(function() {
+    Route::get('/', [BuyerController::class, 'index'])->name('buyers');
+    Route::get('/create', [BuyerController::class, 'create'])->name('buyers.create');
+    Route::get('/update/{id}', [BuyerController::class, 'update'])->name('buyers.update');
+    Route::get('/delete/{id}', [BuyerController::class, 'delete'])->name('buyers.delete');
 });
