@@ -2,7 +2,7 @@
     <main>
         <div class="max-w-5xl w-full mx-auto py-10 px-5">
             <x-header title="Editar Evento">
-                <x-button type="link-external" label="Voltar" to="{{route('events')}}" />
+                <x-button type="link" label="Voltar" to="{{route('events')}}" />
             </x-header>
 
             <x-alerts />
@@ -15,8 +15,9 @@
                 <x-input type="number" label="Quantidade:" name="qtd_tickets" placeholder="Quantidade de Fichas" value="{{$event['qtd_tickets']}}" />
                 <x-input type="text" label="Valor:" name="price_ticket" placeholder="Preço por Unidade" value="{{number_format($event['price_ticket'], 2, ',', '.')}}" />
                 <x-textarea label="Descrição:" name="description" placeholder="Descrição do Evento" rows="5" value="{{$event['description']}}" />
-                <div class="relative w-full">
-                    <x-button label="Enviar" />
+                <div class="w-full flex gap-3">
+                    <x-button type="reset" label="Resetar" />
+                    <x-button type="submit" label="Enviar" />
                 </div>
             </form>
         </div>

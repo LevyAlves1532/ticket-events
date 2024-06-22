@@ -1,8 +1,8 @@
-<x-layout>
+<x-layout title="Ticket Events - Criar">
     <main>
         <div class="max-w-5xl w-full mx-auto py-10 px-5">
             <x-header title="Criar Evento">
-                <x-button type="link-external" label="Voltar" to="{{route('events')}}" />
+                <x-button type="link" label="Voltar" to="{{route('events')}}" />
             </x-header>
 
             <x-alerts />
@@ -14,8 +14,9 @@
                 <x-input type="number" label="Quantidade:" placeholder="Quantidade de Fichas" name="qtd_tickets" />
                 <x-input type="text" label="Valor:" placeholder="Preço por Unidade" name="price_ticket" />
                 <x-textarea label="Descrição:" name="description" placeholder="Descrição do Evento" rows="5" />
-                <div class="relative w-full">
-                    <x-button label="Enviar" />
+                <div class="w-full flex gap-3">
+                    <x-button type="reset" label="Resetar" />
+                    <x-button type="submit" label="Enviar" />
                 </div>
             </form>
         </div>
