@@ -20,6 +20,8 @@ Route::prefix('events')->group(function() {
 Route::prefix('buyers')->group(function() {
     Route::get('/', [BuyerController::class, 'index'])->name('buyers');
     Route::get('/create', [BuyerController::class, 'create'])->name('buyers.create');
+    Route::post('/create_action', [BuyerController::class, 'create_action'])->name('buyers.create_action');
     Route::get('/update/{id}', [BuyerController::class, 'update'])->name('buyers.update');
+    Route::post('/update_action', [BuyerController::class, 'update_action'])->name('buyers.update_action');
     Route::get('/delete/{id}', [BuyerController::class, 'delete'])->name('buyers.delete');
 });

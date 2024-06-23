@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
+use App\Models\Buyer;
 use App\Models\Event;
 
 class DatabaseSeeder extends Seeder
@@ -15,5 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Event::factory(40)->create();
+        Buyer::factory(30)->create();
     }
 }

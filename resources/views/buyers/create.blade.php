@@ -7,7 +7,7 @@
 
             <x-alerts />
 
-            <form method="POST" action="#" id="form-buyer" class="flex flex-wrap gap-5">
+            <form method="POST" action="{{route('buyers.create_action')}}" id="form-buyer" class="flex flex-wrap gap-5">
                 @csrf
                 <x-input label="Nome:" name="name" placeholder="Nome do Comprador" />
                 <x-input label="Telefone:" name="phone" placeholder="Telefone do Comprador" />
@@ -21,6 +21,7 @@
 
     <x-slot:scripts>
         <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
-        <script src="{{asset('assets/js/utils/validates.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.mask.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/buyers.js')}}"></script>
     </x-slot:scripts>
 </x-layout>

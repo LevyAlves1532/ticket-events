@@ -11,6 +11,11 @@ class Buyer extends Model
 {
     protected $table = 'buyers';
 
+    protected $fillable = [
+        'name',
+        'phone',
+    ];
+
     use HasFactory;
 
     public function ticket_buyers() {

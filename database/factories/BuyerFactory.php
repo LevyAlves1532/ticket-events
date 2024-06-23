@@ -9,6 +9,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class BuyerFactory extends Factory
 {
+    public function brPhoneNumber(): string
+    {
+        $ddd = $this->faker->numberBetween(11, 99); // Gera um DDD aleatório
+        $prefix = $this->faker->numberBetween(90000, 99999); // Prefixo do celular
+        $suffix = $this->faker->numberBetween(1000, 9999); // Sufixo do celular
+
+        return "($ddd) $prefix-$suffix";
+    }
+
     /**
      * Define the model's default state.
      *
@@ -18,7 +27,7 @@ class BuyerFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => $this->brPhoneNumber(),
         ];
     }
 }

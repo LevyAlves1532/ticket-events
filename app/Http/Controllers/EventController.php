@@ -40,6 +40,8 @@ class EventController extends Controller
     public function update(Request $request) {
         $data['event'] = Event::find($request->id);
 
+        if (empty($data['event'])) return redirect(route('events'));
+
         return view('events.update', $data);
     }
 
