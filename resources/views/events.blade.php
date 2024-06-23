@@ -36,6 +36,8 @@
                         </tr>
                     @endforeach
                 </x-table>
+            @else
+                <p class="text-white text-base font-medium">Não há eventos cadastrados!</p>
             @endif
         </div>
     </main>

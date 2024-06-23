@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TicketBuyerController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -24,4 +25,9 @@ Route::prefix('buyers')->group(function() {
     Route::get('/update/{id}', [BuyerController::class, 'update'])->name('buyers.update');
     Route::post('/update_action', [BuyerController::class, 'update_action'])->name('buyers.update_action');
     Route::get('/delete/{id}', [BuyerController::class, 'delete'])->name('buyers.delete');
+});
+
+Route::prefix('ticket_buyers')->group(function() {
+    Route::get('/create_event/{id_event}', [TicketBuyerController::class, 'create_event'])->name('ticket_buyers.create_event');
+    Route::get('/delete_event/{id_event}', [TicketBuyerController::class, 'delete_event'])->name('ticket_buyers.delete_event');
 });
