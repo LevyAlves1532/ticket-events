@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\TicketBuyer;
 
 class EventController extends Controller
 {
@@ -41,6 +42,8 @@ class EventController extends Controller
         $data['event'] = Event::find($request->id);
 
         if (empty($data['event'])) return redirect(route('events'));
+
+        $data['ticket_buyers'] = TicketBuyer::where('event_id', '=', $request->id)->get();
 
         return view('events.update', $data);
     }

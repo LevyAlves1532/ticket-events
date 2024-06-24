@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('ticket_buyers', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->foreignIdFor(Event::class)->references('id')->on('events')->onDelete('CASCADE');
             $table->foreignIdFor(Buyer::class)->references('id')->on('buyers')->onDelete('CASCADE');
             $table->timestamps();

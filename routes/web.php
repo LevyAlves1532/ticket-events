@@ -28,6 +28,7 @@ Route::prefix('buyers')->group(function() {
 });
 
 Route::prefix('ticket_buyers')->group(function() {
-    Route::get('/create_event/{id_event}', [TicketBuyerController::class, 'create_event'])->name('ticket_buyers.create_event');
-    Route::get('/delete_event/{id_event}', [TicketBuyerController::class, 'delete_event'])->name('ticket_buyers.delete_event');
+    Route::get('/create_buyer_in_event/{event_id}', [TicketBuyerController::class, 'create_buyer_in_event'])->name('ticket_buyers.create_buyer_in_event');
+    Route::post('/create_buyer_in_event_action', [TicketBuyerController::class, 'create_buyer_in_event_action'])->name('ticket_buyers.create_buyer_in_event_action');
+    Route::get('/delete_buyer_in_event/{event_id}/{id}', [TicketBuyerController::class, 'delete_buyer_in_event'])->name('ticket_buyers.delete_buyer_in_event');
 });
