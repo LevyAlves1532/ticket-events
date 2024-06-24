@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Event::factory(40)->create();
+        Event::factory(20)->create();
         Buyer::factory(30)->create();
-        TicketBuyer::factory(20)->create();
+        TicketBuyer::factory(40)->create();
     }
 }
