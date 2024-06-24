@@ -2,9 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+
+use App\Models\Buyer;
+use App\Models\Event;
+use App\Models\TicketBuyer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Event::factory(20)->create();
+        Buyer::factory(30)->create();
+        TicketBuyer::factory(40)->create();
     }
 }

@@ -1,10 +1,30 @@
-<x-layout>
+<x-layout title="Ticket Events - Criar">
     <main>
         <div class="max-w-5xl w-full mx-auto py-10 px-5">
-            <header class="pb-3 mb-6 border-b-2 border-slate-600 flex justify-between items-center">
-                <h1 class="text-2xl text-white">Crie um Evento</h1>
-                <a href="{{route('events')}}" class="py-3 px-6 cursor-pointer border-2 border-slate-400 rounded-lg text-base font-semibold text-slate-400 ease-in-out duration-[0.3s] hover:bg-slate-400 hover:text-slate-900">Voltar</a>
-            </header>
+            <x-header title="Criar Evento">
+                <x-button type="link" label="Voltar" to="{{route('events')}}" />
+            </x-header>
+
+            <x-alerts />
+
+            <form method="POST" action="{{route('events.create_action')}}" id="form-event" class="flex flex-wrap gap-5">
+                @csrf
+                <x-input label="Título" name="title" placeholder="Título do Evento" />
+                <x-input type="datetime-local" label="Data e Horário:" name="due_date" />
+                <x-input type="number" label="Quantidade:" placeholder="Quantidade de Fichas" name="qtd_tickets" />
+                <x-input type="text" label="Valor:" placeholder="Preço por Unidade" name="price_ticket" />
+                <x-textarea label="Descrição:" name="description" placeholder="Descrição do Evento" rows="5" />
+                <div class="w-full flex gap-3">
+                    <x-button type="reset" label="Resetar" />
+                    <x-button type="submit" label="Enviar" />
+                </div>
+            </form>
         </div>
     </main>
+
+    <x-slot:scripts>
+        <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('assets/js/utils/validates.js')}}"></script>
+        <script src="{{asset('assets/js/pages/events.js')}}"></script>
+    </x-slot:scripts>
 </x-layout>
