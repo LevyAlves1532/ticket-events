@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 use App\Models\Buyer;
 use App\Models\Event;
@@ -23,14 +24,18 @@ class TicketBuyerFactory extends Factory
         $event = Event::all()->random();
         $buyer = Buyer::all()->random();
 
-        $number_ticket = rand(0, $event->qtd_tickets);
+        while ($event->ticket_buyers->where('buyer_id', '=', $buyer->id)->count() > 0) {
+            $buyer = Buyer::all()->random();
+        }
 
-        // do {
-        //     $
-        // } while();
+        $code = '#' . Str::random(10);
+
+        while ($event->ticket_buyers->where('code', '=', $code)->count() > 0) {
+            $code = '#' . Str::random(10);
+        }
 
         return [
-            'number_ticket' => $number_ticket,
+            'code' => $code,
             'event_id' => $event,
             'buyer_id' => $buyer,
         ];

@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Buyer;
 use App\Models\Event;
+use App\Models\TicketBuyer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
     {
         Event::factory(40)->create();
         Buyer::factory(30)->create();
+        TicketBuyer::factory(20)->create();
     }
 }

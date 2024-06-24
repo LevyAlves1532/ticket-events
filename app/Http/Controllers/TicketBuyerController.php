@@ -45,16 +45,20 @@ class TicketBuyerController extends Controller
     }
 
     public function delete_buyer_in_event(Request $request) {
-        if (!empty($request->id)) {
-            $ticket_buyer = TicketBuyer::find($request->id);
+        if ($request->event_id) {
+            $event = Event::find($request->event_id);
 
-            if ($ticket_buyer) {
-                $ticket_buyer->delete();
+            if ($event && !empty($request->id)) {
+                $ticket_buyer = $event->ticket_buyers->find($request->id);
+
+                if ($ticket_buyer) {
+                    $ticket_buyer->delete();
+                }
             }
+
+            return redirect(route('events.update', ['id' => $request->event_id]));
+        } else {
+            return redirect(route('events'));
         }
-
-        if ($request->event_id) return redirect(route('events.update', ['id' => $request->event_id]));
-
-        return redirect(route('events'));
     }
 }
