@@ -4,12 +4,12 @@ $(function() {
 
     $('#form-ticket-buyers').validate({
         rules: {
-            buyer: {
+            buyer_id: {
                 required: true,
             },
         },
         messages: {
-            buyer: {
+            buyer_id: {
                 required: 'Comprador obrigátorio!',
             },
         },

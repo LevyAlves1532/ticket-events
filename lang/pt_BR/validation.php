@@ -207,6 +207,7 @@ return [
         'due_date'  => 'data e horário',
         'qtd_tickets' => 'quantidade de ingressos',
         'price_ticket' => 'preço do ingresso',
+        'buyer_id' => 'comprador',
         'username'  => 'usuário',
         'year'      => 'ano',
         'description' => 'descrição',
